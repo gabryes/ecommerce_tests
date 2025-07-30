@@ -1,2 +1,2 @@
 *** Settings ***
-Resource   ./pages/teste.robot
+Resource   ./pages/resource.robot
