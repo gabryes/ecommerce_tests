@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.10.10 on win32)" generated="20250730 16:25:30.738" rpa="false" schemaversion="4">
+<suite id="s1" name="Teste" source="c:\Users\user\Documents\Prime\Treinamentos\E-comercce_teste\ecommerce_tests\tests\teste.robot">
+<test id="s1-t1" name="Abrir o navegador e realizar cadastro" line="7">
+<kw name="Dado que eu abra o navegador" library="resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://automationexercise.com/</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20250730 16:25:34.456" level="INFO">Opening browser 'Chrome' to base url 'https://automationexercise.com/'.</msg>
+<status status="PASS" starttime="20250730 16:25:34.448" endtime="20250730 16:25:44.051"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250730 16:27:04.022" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20250730 16:25:44.056" endtime="20250730 16:27:04.025"/>
+</kw>
+<status status="PASS" starttime="20250730 16:25:34.437" endtime="20250730 16:27:04.027"/>
+</kw>
+<status status="PASS" starttime="20250730 16:25:34.426" endtime="20250730 16:27:04.030"/>
+</test>
+<status status="PASS" starttime="20250730 16:25:30.798" endtime="20250730 16:27:04.048"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Teste">Teste</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
