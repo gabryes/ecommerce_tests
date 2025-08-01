@@ -1,26 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.10.10 on win32)" generated="20250730 16:25:30.738" rpa="false" schemaversion="4">
-<suite id="s1" name="Teste" source="c:\Users\user\Documents\Prime\Treinamentos\E-comercce_teste\ecommerce_tests\tests\teste.robot">
+<robot generator="Robot 6.1.1 (Python 3.10.10 on win32)" generated="20250801 10:18:53.187" rpa="false" schemaversion="4">
+<suite id="s1" name="Sac" source="c:\Users\user\Documents\Prime\Treinamentos\E-comercce_teste\ecommerce_tests\tests\sac.robot">
 <test id="s1-t1" name="Abrir o navegador e realizar cadastro" line="7">
 <kw name="Dado que eu abra o navegador" library="resource">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>https://automationexercise.com/</arg>
 <arg>Chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20250730 16:25:34.456" level="INFO">Opening browser 'Chrome' to base url 'https://automationexercise.com/'.</msg>
-<status status="PASS" starttime="20250730 16:25:34.448" endtime="20250730 16:25:44.051"/>
+<msg timestamp="20250801 10:19:00.303" level="INFO">Opening browser 'Chrome' to base url 'https://automationexercise.com/'.</msg>
+<status status="PASS" starttime="20250801 10:19:00.299" endtime="20250801 10:19:06.667"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20250730 16:27:04.022" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20250730 16:25:44.056" endtime="20250730 16:27:04.025"/>
+<msg timestamp="20250801 10:19:09.671" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20250801 10:19:06.668" endtime="20250801 10:19:09.672"/>
 </kw>
-<status status="PASS" starttime="20250730 16:25:34.437" endtime="20250730 16:27:04.027"/>
+<status status="PASS" starttime="20250801 10:19:00.287" endtime="20250801 10:19:09.674"/>
 </kw>
-<status status="PASS" starttime="20250730 16:25:34.426" endtime="20250730 16:27:04.030"/>
+<kw name="Quando acesso a página de SAC" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${menu.sac}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250801 10:19:09.791" level="INFO">Clicking element '//a[text()=" Contact us"]'.</msg>
+<status status="PASS" starttime="20250801 10:19:09.778" endtime="20250801 10:19:14.477"/>
+</kw>
+<status status="PASS" starttime="20250801 10:19:09.775" endtime="20250801 10:19:14.479"/>
+</kw>
+<kw name="E insiro os dados corretos para SAC" library="resource">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${sac.nome}</arg>
+<arg>Gabriel</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250801 10:19:14.493" level="INFO">Typing text 'Gabriel' into text field '//input[@placeholder="Name"]'.</msg>
+<status status="PASS" starttime="20250801 10:19:14.486" endtime="20250801 10:19:15.394"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${sac.email}</arg>
+<arg>gabriel@gabriel.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250801 10:19:15.408" level="INFO">Typing text 'gabriel@gabriel.com' into text field '//input[@placeholder="Email"]'.</msg>
+<status status="PASS" starttime="20250801 10:19:15.396" endtime="20250801 10:19:15.993"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${sac.assunto}</arg>
+<arg>Feedback da Compra</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250801 10:19:16.005" level="INFO">Typing text 'Feedback da Compra' into text field '//input[@placeholder="Subject"]'.</msg>
+<status status="PASS" starttime="20250801 10:19:15.995" endtime="20250801 10:19:16.450"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${sac.conteudo}</arg>
+<arg>Foi uma compra muito boa!</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250801 10:19:16.460" level="INFO">Typing text 'Foi uma compra muito boa!' into text field '//textarea[@placeholder="Your Message Here"]'.</msg>
+<status status="PASS" starttime="20250801 10:19:16.453" endtime="20250801 10:19:16.685"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${sac.btn_enviar}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20250801 10:19:16.704" level="INFO">Clicking button '//input[@name="submit"]'.</msg>
+<status status="PASS" starttime="20250801 10:19:16.693" endtime="20250801 10:19:16.925"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250801 10:19:18.936" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20250801 10:19:16.927" endtime="20250801 10:19:18.937"/>
+</kw>
+<kw name="Handle Alert" library="SeleniumLibrary">
+<arg>action=ACCEPT</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<msg timestamp="20250801 10:19:18.943" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<status status="PASS" starttime="20250801 10:19:18.940" endtime="20250801 10:19:18.971"/>
+</kw>
+<status status="PASS" starttime="20250801 10:19:14.482" endtime="20250801 10:19:18.975"/>
+</kw>
+<kw name="Então o formulario de SAC deve ser enviado com sucesso" library="resource">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${sac.msg_sucesso}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${sac.msg_sucesso}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20250801 10:19:19.258" level="INFO">Element '//div[@class="status alert alert-success"]' is displayed.</msg>
+<status status="PASS" starttime="20250801 10:19:19.008" endtime="20250801 10:19:19.258"/>
+</kw>
+<msg timestamp="20250801 10:19:19.260" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20250801 10:19:19.002" endtime="20250801 10:19:19.260"/>
+</kw>
+<if>
+<branch type="IF" condition="${status}">
+<kw name="Log" library="BuiltIn">
+<arg>Sucesso! Mensagem apareceu</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20250801 10:19:19.270" level="INFO">Sucesso! Mensagem apareceu</msg>
+<status status="PASS" starttime="20250801 10:19:19.260" endtime="20250801 10:19:19.270"/>
+</kw>
+<status status="PASS" starttime="20250801 10:19:19.260" endtime="20250801 10:19:19.270"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" library="BuiltIn">
+<arg>Erro! Mensagem não apareceu</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20250801 10:19:19.270" endtime="20250801 10:19:19.278"/>
+</kw>
+<status status="NOT RUN" starttime="20250801 10:19:19.270" endtime="20250801 10:19:19.280"/>
+</branch>
+<status status="PASS" starttime="20250801 10:19:19.260" endtime="20250801 10:19:19.280"/>
+</if>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250801 10:19:32.840" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20250801 10:19:19.280" endtime="20250801 10:19:32.840"/>
+</kw>
+<status status="PASS" starttime="20250801 10:19:18.995" endtime="20250801 10:19:32.840"/>
+</kw>
+<status status="PASS" starttime="20250801 10:19:00.274" endtime="20250801 10:19:32.840"/>
 </test>
-<status status="PASS" starttime="20250730 16:25:30.798" endtime="20250730 16:27:04.048"/>
+<status status="PASS" starttime="20250801 10:18:53.235" endtime="20250801 10:19:32.865"/>
 </suite>
 <statistics>
 <total>
@@ -29,9 +130,10 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Teste">Teste</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Sac">Sac</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20250801 10:19:00.212" level="WARN">Environment variable `RC_JAVA_ACCESS_BRIDGE_DLL` needs to be set to absolute path of `WindowsAccessBridge-64.dll`</msg>
 </errors>
 </robot>
