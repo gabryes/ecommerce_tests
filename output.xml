@@ -1,26 +1,273 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.10.10 on win32)" generated="20250730 16:25:30.738" rpa="false" schemaversion="4">
-<suite id="s1" name="Teste" source="c:\Users\user\Documents\Prime\Treinamentos\E-comercce_teste\ecommerce_tests\tests\teste.robot">
+<robot generator="Robot 7.3.2 (Python 3.13.4 on win32)" generated="2025-08-01T16:02:32.399624" rpa="false" schemaversion="5">
+<suite id="s1" name="Cadastro" source="c:\prime\Testes_auto\ecommerce_tests\tests\cadastro.robot">
 <test id="s1-t1" name="Abrir o navegador e realizar cadastro" line="7">
-<kw name="Dado que eu abra o navegador" library="resource">
-<kw name="Open Browser" library="SeleniumLibrary">
+<kw name="Dado que eu abra o navegador" owner="resource">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-08-01T16:02:33.249792" level="INFO">Opening browser 'Chrome' to base url 'https://automationexercise.com/'.</msg>
 <arg>https://automationexercise.com/</arg>
 <arg>Chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20250730 16:25:34.456" level="INFO">Opening browser 'Chrome' to base url 'https://automationexercise.com/'.</msg>
-<status status="PASS" starttime="20250730 16:25:34.448" endtime="20250730 16:25:44.051"/>
+<status status="PASS" start="2025-08-01T16:02:33.247670" elapsed="6.327745"/>
 </kw>
-<kw name="Sleep" library="BuiltIn">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-08-01T16:02:42.584808" level="INFO">Slept 3 seconds.</msg>
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20250730 16:27:04.022" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20250730 16:25:44.056" endtime="20250730 16:27:04.025"/>
+<status status="PASS" start="2025-08-01T16:02:39.579625" elapsed="3.005850"/>
 </kw>
-<status status="PASS" starttime="20250730 16:25:34.437" endtime="20250730 16:27:04.027"/>
+<status status="PASS" start="2025-08-01T16:02:33.242213" elapsed="9.343764"/>
 </kw>
-<status status="PASS" starttime="20250730 16:25:34.426" endtime="20250730 16:27:04.030"/>
+<kw name="Quando acesso o cadastro do cliente" owner="resource">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-01T16:02:42.593638" level="INFO">Clicking element '//a[text()=" Signup / Login"]'.</msg>
+<arg>${cadastro.login}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-01T16:02:42.589713" elapsed="1.306006"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-08-01T16:02:45.899426" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-08-01T16:02:43.897398" elapsed="2.002822"/>
+</kw>
+<status status="PASS" start="2025-08-01T16:02:42.587913" elapsed="3.312887"/>
+</kw>
+<kw name="E insiro os dados corretos" owner="resource">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-01T16:02:45.912826" level="INFO">Clicking element '//input[@name="name"]'.</msg>
+<arg>${cadastro.nome}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-01T16:02:45.908556" elapsed="0.125831"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-01T16:02:46.041757" level="INFO">Typing text 'Lucia' into text field '//input[@name="name"]'.</msg>
+<arg>${cadastro.nome}</arg>
+<arg>Lucia</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-01T16:02:46.036980" elapsed="0.088569"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-01T16:02:46.129960" level="INFO">Typing text 'lucia@gmail.com' into text field '(//input[@placeholder="Email Address"])[2]'.</msg>
+<arg>${cadastro.email}</arg>
+<arg>lucia@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-01T16:02:46.126898" elapsed="0.119232"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-01T16:02:46.250506" level="INFO">Clicking button '//button[text()="Signup"]'.</msg>
+<arg>${cadastro.botao}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-01T16:02:46.247111" elapsed="0.862496"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-01T16:02:47.114225" level="INFO">Clicking button '(//input[@name=("title")])[2]'.</msg>
+<arg>${cadastro.titulo}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-01T16:02:47.111379" elapsed="0.124821"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-08-01T16:02:47.239602" level="INFO">Typing password into text field '//input[@type=("password")]'.</msg>
+<msg time="2025-08-01T16:02:47.490216" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${cadastro.senha}</arg>
+<arg>p12346</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-01T16:02:47.237186" elapsed="0.378871"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${cadastro.dia}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-01T16:02:47.618168" elapsed="0.056716"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2025-08-01T16:02:47.678263" level="INFO">Selecting options from selection list '//select[@data-qa='days']' by value 5.</msg>
+<arg>${cadastro.dia}</arg>
+<arg>5</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2025-08-01T16:02:47.675913" elapsed="0.130481"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${cadastro.mes}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-01T16:02:47.807606" elapsed="0.031765"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2025-08-01T16:02:47.846627" level="INFO">Selecting options from selection list '//select[@data-qa='months']' by value 6.</msg>
+<arg>${cadastro.mes}</arg>
+<arg>6</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2025-08-01T16:02:47.840369" elapsed="0.129911"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${cadastro.ano}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-01T16:02:47.971034" elapsed="0.057082"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2025-08-01T16:02:48.036578" level="INFO">Selecting options from selection list '//select[@data-qa='years']' by value 2018.</msg>
+<arg>${cadastro.ano}</arg>
+<arg>2018</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2025-08-01T16:02:48.032084" elapsed="0.125889"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${cadastro.ano}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-01T16:02:48.161017" elapsed="0.023933"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-01T16:02:48.187722" level="INFO">Clicking element '//*[@id="newsletter"]'.</msg>
+<arg>${cadastro.carta}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-01T16:02:48.185717" elapsed="0.124600"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-01T16:02:48.315797" level="INFO">Clicking element '//*[@id="optin"]'.</msg>
+<arg>${cadastro.ofertas}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-01T16:02:48.312969" elapsed="0.134746"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-01T16:02:48.452701" level="INFO">Typing text 'Lucia' into text field '//*[@id="first_name"]'.</msg>
+<arg>${cadastro.primeiroNome}</arg>
+<arg>Lucia</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-01T16:02:48.449054" elapsed="0.133201"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-01T16:02:48.585161" level="INFO">Typing text 'VasquesMoreira' into text field '//*[@id="last_name"]'.</msg>
+<arg>${cadastro.ultimoNome}</arg>
+<arg>VasquesMoreira</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-01T16:02:48.583208" elapsed="0.199855"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-01T16:02:48.787664" level="INFO">Typing text 'Tech_info' into text field '//input[@data-qa='company']'.</msg>
+<arg>${cadastro.empresa}</arg>
+<arg>Tech_info</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-01T16:02:48.784651" elapsed="0.183807"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-01T16:02:48.979325" level="INFO">Typing text 'Rua Lopes Alves' into text field '//input[@data-qa='address']'.</msg>
+<arg>${cadastro.endereço}</arg>
+<arg>Rua Lopes Alves</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-01T16:02:48.971798" elapsed="0.148031"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-01T16:02:49.122776" level="INFO">Typing text 'Rua Casemiro Lote B' into text field '//input[@data-qa='address2']'.</msg>
+<arg>${cadastro.endereço2}</arg>
+<arg>Rua Casemiro Lote B</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-01T16:02:49.120670" elapsed="0.158276"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2025-08-01T16:02:49.281782" level="INFO">Selecting options from selection list '//select[@data-qa='country']' by value Canada.</msg>
+<arg>${cadastro.país}</arg>
+<arg>Canada</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2025-08-01T16:02:49.279810" elapsed="0.110572"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${cadastro.país}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-01T16:02:49.393890" elapsed="0.030363"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-01T16:02:49.430848" level="INFO">Typing text 'Bela' into text field '//input[@data-qa='state']'.</msg>
+<arg>${cadastro.estado}</arg>
+<arg>Bela</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-01T16:02:49.426272" elapsed="0.116955"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-01T16:02:49.547830" level="INFO">Typing text 'Vancouver' into text field '//input[@data-qa='city']'.</msg>
+<arg>${cadastro.cidade}</arg>
+<arg>Vancouver</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-01T16:02:49.544688" elapsed="0.111493"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-01T16:02:49.660798" level="INFO">Typing text 'A1A3621' into text field '//input[@data-qa='zipcode']'.</msg>
+<arg>${cadastro.cep}</arg>
+<arg>A1A3621</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-01T16:02:49.657753" elapsed="0.122545"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-01T16:02:49.783997" level="INFO">Typing text '+1 362 5485 2412' into text field '//input[@data-qa='mobile_number']'.</msg>
+<arg>${cadastro.celular}</arg>
+<arg>+1 362 5485 2412</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-01T16:02:49.781665" elapsed="0.132229"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-01T16:02:49.917175" level="INFO">Clicking button '//button[@data-qa="create-account"]'.</msg>
+<arg>${cadastro.criarConta}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-01T16:02:49.914950" elapsed="1.217138"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-08-01T16:02:51.228684" level="INFO">Element '//b[text()="Account Created!"]' is displayed.</msg>
+<arg>${cadastro.msg_validaçãoConta}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-01T16:02:51.138414" elapsed="0.091398"/>
+</kw>
+<msg time="2025-08-01T16:02:51.231050" level="INFO">${status} = True</msg>
+<var>${status}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${cadastro.msg_validaçãoConta}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-08-01T16:02:51.134502" elapsed="0.097293"/>
+</kw>
+<if>
+<branch type="IF" condition="${status}">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-08-01T16:02:51.235884" level="INFO">Sucesso! Mensagem apareceu</msg>
+<arg>Sucesso! Mensagem apareceu</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-08-01T16:02:51.234850" elapsed="0.001810"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-08-01T16:02:51.418624" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-08-01T16:02:51.237567" elapsed="0.181781"/>
+</kw>
+<status status="PASS" start="2025-08-01T16:02:51.233426" elapsed="0.186344"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>Erro! Mensagem não apareceu</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-08-01T16:02:51.421202" elapsed="0.000889"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2025-08-01T16:02:51.422978" elapsed="0.000369"/>
+</kw>
+<status status="NOT RUN" start="2025-08-01T16:02:51.420199" elapsed="0.003549"/>
+</branch>
+<status status="PASS" start="2025-08-01T16:02:51.233152" elapsed="0.190875"/>
+</if>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-08-01T16:03:02.675835" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-08-01T16:02:51.424853" elapsed="11.251617"/>
+</kw>
+<status status="PASS" start="2025-08-01T16:02:45.906014" elapsed="16.771183"/>
+</kw>
+<status status="PASS" start="2025-08-01T16:02:33.235354" elapsed="29.443778"/>
 </test>
-<status status="PASS" starttime="20250730 16:25:30.798" endtime="20250730 16:27:04.048"/>
+<status status="PASS" start="2025-08-01T16:02:32.417839" elapsed="30.266053"/>
 </suite>
 <statistics>
 <total>
@@ -29,7 +276,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Teste">Teste</stat>
+<stat name="Cadastro" id="s1" pass="1" fail="0" skip="0">Cadastro</stat>
 </suite>
 </statistics>
 <errors>
