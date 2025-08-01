@@ -21,4 +21,8 @@
 ...    popup_ok=//button[@id='ok']
 ...    msg_sucesso=//div[@class="status alert alert-success"]
 
+&{item}
+...    btn_test_cases=(//button[text()="Test Cases"])[1]
+
+
 

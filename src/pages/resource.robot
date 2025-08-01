@@ -23,6 +23,14 @@ insiro os dados corretos
 
 # Ouvidoria
 acesso a página de SAC
+    ${status}    Run Keyword And Return Status    Element Should Be Visible    ${item.btn_test_cases}
+    IF    ${status}
+        Log    Sucesso! Acessou a página Home
+        Capture Page Screenshot
+    ELSE
+        Log    Erro! Página Home não foi apresentada  WARN
+        Capture Page Screenshot
+    END
     SeleniumLibrary.Click Element    ${menu.sac}
     
 insiro os dados corretos para SAC
@@ -34,12 +42,13 @@ insiro os dados corretos para SAC
     Sleep    2s
     Handle Alert    action=ACCEPT 
     
-
 o formulario de SAC deve ser enviado com sucesso
-    ${status}=    Run Keyword And Return Status    Element Should Be Visible    ${sac.msg_sucesso}
+    ${status}    Run Keyword And Return Status    Element Should Be Visible    ${sac.msg_sucesso}
     IF    ${status}
         Log    Sucesso! Mensagem apareceu
+        Capture Page Screenshot
     ELSE
-        Log    Erro! Mensagem não apareceu
+        Log    Erro! Mensagem não apareceu   WARN
+        Capture Page Screenshot
     END
     Sleep    5s
