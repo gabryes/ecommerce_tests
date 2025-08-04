@@ -1,0 +1,16 @@
+[Rr][Ee][Ss][Uu][Ll][Tt]*/
+[Ll][Oo][Gg]*/
+
+**/__pycache__
+
+uv.lock
+
+.env
+*venv/
+
+*.png
+*.jpg
+*.jepg
+*.gif
+*.html
+*.xml
