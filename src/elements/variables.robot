@@ -28,7 +28,8 @@
 ...    usuario_validaçãoLogin=//ul[@class='nav navbar-nav']/li/a/b
 ...    deletarConta=//a[text()=' Delete Account']
 ...    msgContaDeletada=//b[text()='Account Deleted!']
-...    botaoContinue=//a[@data-qa='continue-button']
+...    botaoContinue=//a[@class='btn btn-primary']
+
 
 
 &{menu}
