@@ -8,7 +8,7 @@ que eu abra o navegador
     Sleep    3s
 
 acesso o cadastro do cliente
-   Click Element    ${cadastro.login}
+   SeleniumLibrary.Click Element    ${cadastro.login}
    Sleep    2s        
 
 insiro os dados corretos
@@ -42,15 +42,13 @@ insiro os dados corretos
 
 o cadastro deve ser concluído com sucesso
     ${status}    Run Keyword And Return Status    Element Should Be Visible    ${cadastro.msg_validaçãoConta}
-    IF    ${status}
-        Log    Sucesso! Mensagem apareceu
-        Capture Page Screenshot
-    ELSE
-        Log    Erro! Mensagem não apareceu   WARN
-        Capture Page Screenshot
-    END
 
-
+    SeleniumLibrary.Click Element    ${cadastro.nome}
+    Input Text    ${cadastro.nome}    Priscila
+    Input Text    ${cadastro.email}   priscila@gmail.com
+    Click Button    ${cadastro.botao}
+    Sleep    2s
+    
 clico no botão "continue" para vefificar se usuário está logado
     Wait Until Element Is Visible    ${cadastro.acessoConta}    5s
     Click Element                    ${cadastro.acessoConta}
@@ -68,3 +66,37 @@ clico no botão "continue" para finalizar o processo
     Wait Until Element Is Visible    ${cadastro.botaoContinue}    3s
     Click Element                   ${cadastro.botaoContinue}
     Sleep                           2s
+
+# Ouvidoria
+acesso a página de SAC
+    ${status}    Run Keyword And Return Status    Element Should Be Visible    ${item.btn_test_cases}
+    IF    ${status}
+        Log    Sucesso! Acessou a página Home
+        Capture Page Screenshot
+    ELSE
+        Log    Erro! Página Home não foi apresentada  WARN
+        Capture Page Screenshot
+    END
+    SeleniumLibrary.Click Element    ${menu.sac}
+    
+insiro os dados corretos para SAC
+    Input Text    ${sac.nome}    Gabriel
+    Input Text    ${sac.email}    gabriel@gabriel.com
+    Input Text    ${sac.assunto}    Feedback da Compra
+    Input Text    ${sac.conteudo}    Foi uma compra muito boa!
+    Click Button  ${sac.btn_enviar}
+    Sleep    2s
+    Handle Alert    action=ACCEPT 
+    
+o formulario de SAC deve ser enviado com sucesso
+    ${status}    Run Keyword And Return Status    Element Should Be Visible    ${sac.msg_sucesso}
+    IF    ${status}
+        Log    Sucesso! Mensagem apareceu
+        Capture Page Screenshot
+    ELSE
+        Log    Erro! Mensagem não apareceu   WARN
+        Capture Page Screenshot
+    END
+
+
+
