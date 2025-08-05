@@ -30,8 +30,6 @@
 ...    msgContaDeletada=//b[text()='Account Deleted!']
 ...    botaoContinue=//a[@class='btn btn-primary']
 
-
-
 &{menu}
 ...    login=//a[text()=" Signup / Login"]
 ...    sac=//a[text()=" Contact us"]

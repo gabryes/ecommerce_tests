@@ -12,7 +12,7 @@ acesso o cadastro do cliente
    Sleep    2s        
 
 insiro os dados corretos
-    Click Element    ${cadastro.nome}
+    SeleniumLibrary.Click Element    ${cadastro.nome}
     Input Text    ${cadastro.nome}    Theo
     Input Text    ${cadastro.email}   Theolimahg3@hotmail.com
     Click Button    ${cadastro.botao}
@@ -25,8 +25,8 @@ insiro os dados corretos
     Wait Until Element Is Visible    ${cadastro.ano}    5s
     Select From List By Value    ${cadastro.ano}    2019
     Wait Until Element Is Visible    ${cadastro.ano}    5s      
-    Click Element                   ${cadastro.carta}  
-    Click Element                   ${cadastro.ofertas}
+    SeleniumLibrary.Click Element                   ${cadastro.carta}  
+    SeleniumLibrary.Click Element                   ${cadastro.ofertas}
     Input Text    ${cadastro.primeiroNome}  Theo
     Input Text    ${cadastro.ultimoNome}    Lima
     Input Text    ${cadastro.empresa}   Techo_BF
