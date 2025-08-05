@@ -4,6 +4,7 @@ Resource  ../main.robot
 *** Keywords ***
 que eu abra o navegador
     Open Browser  https://automationexercise.com/   Chrome
+    Maximize Browser Window
     Sleep    3s
 
 acesso o cadastro do cliente
@@ -11,6 +12,36 @@ acesso o cadastro do cliente
    Sleep    2s        
 
 insiro os dados corretos
+    Click Element    ${cadastro.nome}
+    Input Text    ${cadastro.nome}    Theo
+    Input Text    ${cadastro.email}   Theolimahg3@hotmail.com
+    Click Button    ${cadastro.botao}
+    Click Button    ${cadastro.titulo}
+    Input Password    ${cadastro.senha}    p12346
+    Wait Until Element Is Visible    ${cadastro.dia}    5s
+    Select From List By Value    ${cadastro.dia}    5
+    Wait Until Element Is Visible    ${cadastro.mes}    5s
+    Select From List By Value    ${cadastro.mes}    6
+    Wait Until Element Is Visible    ${cadastro.ano}    5s
+    Select From List By Value    ${cadastro.ano}    2019
+    Wait Until Element Is Visible    ${cadastro.ano}    5s      
+    Click Element                   ${cadastro.carta}  
+    Click Element                   ${cadastro.ofertas}
+    Input Text    ${cadastro.primeiroNome}  Theo
+    Input Text    ${cadastro.ultimoNome}    Lima
+    Input Text    ${cadastro.empresa}   Techo_BF
+    Input Text    ${cadastro.endereço}   Rua Castro
+    Input Text    ${cadastro.endereço2}   Rua Sul Lote B
+    Select From List By Value    ${cadastro.país}    Canada
+    Wait Until Element Is Visible    ${cadastro.país}    5s
+    Input Text    ${cadastro.estado}    Bela  
+    Input Text    ${cadastro.cidade}    Vancouver
+    Input Text    ${cadastro.cep}    A1A3621
+    Input Text    ${cadastro.celular}    +1 362 5485 5547
+    Click Button    ${cadastro.criarConta}
+
+o cadastro deve ser concluído com sucesso
+    ${status}    Run Keyword And Return Status    Element Should Be Visible    ${cadastro.msg_validaçãoConta}
     SeleniumLibrary.Click Element    ${cadastro.nome}
     Input Text    ${cadastro.nome}    Theo
     Input Text    ${cadastro.email}   Theolima7@hotmail.com
@@ -53,6 +84,11 @@ o cadastro deve ser concluído com sucesso
 clico no botão "continue" para vefificar se usuário está logado
     Wait Until Element Is Visible    ${cadastro.acessoConta}    5s
     SeleniumLibrary.Click Element                    ${cadastro.acessoConta}
+    Sleep    2s
+    
+clico no botão "continue" para vefificar se usuário está logado
+    Wait Until Element Is Visible    ${cadastro.acessoConta}    5s
+    Click Element                    ${cadastro.acessoConta}
     ${usuario}=                     Get Text    ${cadastro.usuario_validaçãoLogin}
     Log                             ${usuario}
     Should Be Equal                 ${usuario}    Theo
@@ -103,4 +139,5 @@ o formulario de SAC deve ser enviado com sucesso
         Capture Page Screenshot
     END
     Sleep    5s
+
 

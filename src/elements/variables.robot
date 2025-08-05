@@ -31,6 +31,7 @@
 ...    botaoContinue=//a[@class='btn btn-primary']
 
 
+
 &{menu}
 ...    login=//a[text()=" Signup / Login"]
 ...    sac=//a[text()=" Contact us"]
@@ -47,6 +48,7 @@
 
 &{item}
 ...    btn_test_cases=(//button[text()="Test Cases"])[1]
+
 
 
 
