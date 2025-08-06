@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.4 on win32)" generated="2025-08-06T09:49:27.972852" rpa="false" schemaversion="5">
+<suite id="s1" name="Login" source="c:\prime\Testes_auto\ecommerce_tests\tests\login.robot">
+<test id="s1-t1" name="Logar com dados válidos" line="7">
+<kw name="Dado que eu abra o navegador" owner="resource">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-08-06T09:49:28.803780" level="INFO">Opening browser 'Chrome' to base url 'https://automationexercise.com/'.</msg>
+<arg>https://automationexercise.com/</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-08-06T09:49:28.801197" elapsed="4.774316"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-08-06T09:49:33.579520" elapsed="0.093940"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-08-06T09:49:36.681123" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-08-06T09:49:33.675490" elapsed="3.006321"/>
+</kw>
+<status status="PASS" start="2025-08-06T09:49:28.791560" elapsed="7.890737"/>
+</kw>
+<kw name="Quando que eu clico no menu &quot;Signup / Login&quot;" owner="resource">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-06T09:49:36.690646" level="INFO">Clicking element '//a[text()=" Signup / Login"]'.</msg>
+<arg>${login.logar}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-06T09:49:36.686494" elapsed="0.786520"/>
+</kw>
+<status status="PASS" start="2025-08-06T09:49:36.684249" elapsed="0.789869"/>
+</kw>
+<kw name="E insiro os dados válidos" owner="resource">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-06T09:49:37.484256" level="INFO">Typing text 'Theolimat1@hotmail.com' into text field '(//input[@placeholder="Email Address"])[1]'.</msg>
+<arg>${login.email}</arg>
+<arg>Theolimat1@hotmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-06T09:49:37.480508" elapsed="0.318802"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-08-06T09:49:37.802876" level="INFO">Typing password into text field '//input[@data-qa='login-password']'.</msg>
+<msg time="2025-08-06T09:49:37.841170" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${login.senha}</arg>
+<arg>p12346</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-06T09:49:37.800218" elapsed="0.108074"/>
+</kw>
+<status status="PASS" start="2025-08-06T09:49:37.477578" elapsed="0.431646"/>
+</kw>
+<kw name="E clico no botão &quot;Login&quot;" owner="resource">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-06T09:49:37.916154" level="INFO">Clicking button '//button[text()="Login"]'.</msg>
+<arg>${login.botaoLogin}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-06T09:49:37.913965" elapsed="1.766283"/>
+</kw>
+<status status="PASS" start="2025-08-06T09:49:37.912153" elapsed="1.769273"/>
+</kw>
+<kw name="Então usuario deve ser direcionado para página inicial" owner="resource">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${cadastro.usuario_validaçãoLogin}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-06T09:49:39.687560" elapsed="0.039808"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-08-06T09:49:39.777334" level="INFO">Element '//ul[@class='nav navbar-nav']/li/a/b' is displayed.</msg>
+<arg>${cadastro.usuario_validaçãoLogin}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-06T09:49:39.729385" elapsed="0.049091"/>
+</kw>
+<msg time="2025-08-06T09:49:39.780042" level="INFO">${status} = True</msg>
+<var>${status}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${cadastro.usuario_validaçãoLogin}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-08-06T09:49:39.728275" elapsed="0.052587"/>
+</kw>
+<if>
+<branch type="IF" condition="${status}">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-08-06T09:49:39.785763" level="INFO">Sucesso! Usuario logado</msg>
+<arg>Sucesso! Usuario logado</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-08-06T09:49:39.783714" elapsed="0.003124"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-08-06T09:49:40.030693" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-15.png"&gt;&lt;img src="selenium-screenshot-15.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-08-06T09:49:39.788386" elapsed="0.243390"/>
+</kw>
+<status status="PASS" start="2025-08-06T09:49:39.782221" elapsed="0.250374"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>Erro! Usuario nao logado</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-08-06T09:49:40.034580" elapsed="0.000699"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2025-08-06T09:49:40.038738" elapsed="0.000562"/>
+</kw>
+<status status="NOT RUN" start="2025-08-06T09:49:40.033344" elapsed="0.006436"/>
+</branch>
+<status status="PASS" start="2025-08-06T09:49:39.782017" elapsed="0.258105"/>
+</if>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-08-06T09:49:42.042190" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-08-06T09:49:40.040991" elapsed="2.002101"/>
+</kw>
+<status status="PASS" start="2025-08-06T09:49:39.685570" elapsed="2.358491"/>
+</kw>
+<status status="PASS" start="2025-08-06T09:49:28.780517" elapsed="13.266181"/>
+</test>
+<status status="PASS" start="2025-08-06T09:49:27.991250" elapsed="14.060014"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Login" id="s1" pass="1" fail="0" skip="0">Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
