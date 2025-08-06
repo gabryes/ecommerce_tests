@@ -30,6 +30,11 @@
 ...    msgContaDeletada=//b[text()='Account Deleted!']
 ...    botaoContinue=//a[@class='btn btn-primary']
 
+&{login}
+...    logar=//a[text()=" Signup / Login"]
+...    email=(//input[@placeholder="Email Address"])[1]
+...    senha=//input[@data-qa='login-password']
+...    botaoLogin=//button[text()="Login"]
 
 
 &{menu}
