@@ -1,14 +1,12 @@
 *** Settings ***
 Resource  ../main.robot
 
-Library    SeleniumLibrary
-Library    RPA.Desktop
-Library    RPA.JavaAccessBridge
-
 *** Keywords ***
 que eu abra o navegador
-    Open Browser  https://automationexercise.com/   Chrome
+    Open Browser  ${URL}      ${navegador}
     Sleep    3s
+    Maximize Browser Window
+    Wait Until Page Contains Element    ${item.btn_test_cases}
 
 acesso o cadastro do cliente
    SeleniumLibrary.Click Element    ${cadastro.login}
@@ -52,3 +50,24 @@ o formulario de SAC deve ser enviado com sucesso
         Capture Page Screenshot
     END
     Sleep    5s
+#Produtos
+Que estou na página inicial
+    Element Should Be Visible    ${item.btn_test_cases}
+Quando Clico em "products"
+    Double Click Element   ${item.btn_products}
+    
+E Verifico o produto "Blue Top"
+    Double Click Element    ${item.btn_antes_do_click_top}    
+    Element Should Be Visible    ${item.btn_produto_Top} 
+Então Adiciono o produto ao carrinho  
+
+    Double Click Element    ${item.btn_produto_Top}
+        Capture Page Screenshot
+#Dado que estou na página de "products"
+    Click Button    {}
+#E continuo comprando
+#Quando clico em ver carrinho
+#Então verifico se dois produtos foram adicionados
+
+   
+    

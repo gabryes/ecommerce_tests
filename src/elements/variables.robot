@@ -1,4 +1,8 @@
 *** Variables ***
+
+${mensagem_added}   //*[.='View Cart']  
+${URL}    https://automationexercise.com/
+${navegador}    Chrome
  
 &{cadastro}
 ...    login=//a[text()=" Signup / Login"]
@@ -23,6 +27,13 @@
 
 &{item}
 ...    btn_test_cases=(//button[text()="Test Cases"])[1]
+...    btn_products=(//a [contains(text(), 'Products')])
+...    btn_todos_produtos=(//h2[text()='All Products'])
+...    btn_antes_do_click_top=(//a[contains(text(), 'View Product')])
+...    btn_produto_Top=((//button[contains(., 'Add to cart')]))[1]
+...    btn__produto_continuar_comprando=(//button[text()="Continue Shopping"])
+...    btn_produto_dress=(//*[@data-product-id='3'])
+...    btn_carrinho=(//*[.='View Cart'])  
 
 
 
