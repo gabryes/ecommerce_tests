@@ -4,16 +4,15 @@ Resource  ../src/main.robot
 
 
 *** Casos De Teste ***
-Logar com dados válidos  
+Logar com dados válidos
    Dado que eu abra o navegador
-   Quando que eu clico no menu "Signup / Login"
+   Quando clico no menu "Signup / Login" para acessar a conta
    E insiro os dados válidos
    E clico no botão "Login"
-   Então usuario deve ser direcionado para página inicial
+   Então a conta deve ser acessada com sucesso
 
-
-#Excluir cadastro do usuário
-#Dado que eu esteja logado
-#Quando acesso o cadastro do cliente
-#E clico no botão "delete account" 
-#E verifico se apareceu mensagem "account deleted" apareceu na tela
+Excluir cadastro do usuário
+  Dado que eu abra o navegador
+  Quando acesso a conta do usuário cadastrado
+  E clico no botão "delete account" para excluir a conta
+  Então a conta deve ser deletada com sucesso
