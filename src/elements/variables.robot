@@ -35,6 +35,8 @@
 ...    email=(//input[@placeholder="Email Address"])[1]
 ...    senha=//input[@data-qa='login-password']
 ...    botaoLogin=//button[text()="Login"]
+...    deletarConta=//a[text()=' Delete Account']
+...    msgContaDeletada=//b[text()='Account Deleted!']
 
 
 &{menu}

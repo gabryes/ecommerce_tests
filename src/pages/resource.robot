@@ -8,14 +8,14 @@ que eu abra o navegador
     Sleep    3s
 
 #Cadastro
-acesso o cadastro do usuario
+clico no menu "Signup / Login"
    SeleniumLibrary.Click Element    ${cadastro.login}
    Sleep    2s        
 
 insiro os dados corretos
     Click Element    ${cadastro.nome}
-    Input Text    ${cadastro.nome}    Theo
-    Input Text    ${cadastro.email}   Theolimat1@hotmail.com
+    Input Text    ${cadastro.nome}    Celso
+    Input Text    ${cadastro.email}   celsosouzay9@hotmail.com
     Click Button    ${cadastro.botao}
     Click Button    ${cadastro.titulo}
     Input Password    ${cadastro.senha}    p12346
@@ -28,10 +28,10 @@ insiro os dados corretos
     Wait Until Element Is Visible    ${cadastro.ano}    5s      
     Click Element                   ${cadastro.carta}  
     Click Element                   ${cadastro.ofertas}
-    Input Text    ${cadastro.primeiroNome}  Theo
-    Input Text    ${cadastro.ultimoNome}    Lima
-    Input Text    ${cadastro.empresa}   Techo_BF
-    Input Text    ${cadastro.endereço}   Rua Castro
+    Input Text    ${cadastro.primeiroNome}  Celso
+    Input Text    ${cadastro.ultimoNome}    Souza
+    Input Text    ${cadastro.empresa}   Tech_BL
+    Input Text    ${cadastro.endereço}   Rua Z
     Input Text    ${cadastro.endereço2}   Rua Sul Lote B
     Select From List By Value    ${cadastro.país}    Canada
     Wait Until Element Is Visible    ${cadastro.país}    5s
@@ -53,21 +53,27 @@ o cadastro deve ser concluído com sucesso
         Capture Page Screenshot
     END
 
-clico no botão "continue" para vefificar se usuário está logado
+clico no botão "continue" para verificar se usuário está logado
     Wait Until Element Is Visible    ${cadastro.acessoConta}    5s
     SeleniumLibrary.Click Element                    ${cadastro.acessoConta}
     Sleep    2s
     ${usuario}                    Get Text    ${cadastro.usuario_validaçãoLogin}
     Log                             ${usuario}
-    Should Be Equal                 ${usuario}    Theo 
+    Should Be Equal                 ${usuario}    Celso
+
+#Cadastro_Exxlusão cadastro
+acesso o cadastro do usuário
+   Click Element    ${login.logar}
+   Input Text    ${login.email}   celsosouzay8@hotmail.com
+   Input Text   ${login.senha}    p12346
+   Click Button    ${login.botaoLogin}
 clico no botão "delete account" 
     # Handle Alert    action=ACCEPT
-   
     Wait Until Element Is Visible    ${cadastro.deletarConta}    5s
     SeleniumLibrary.Click Element                   ${cadastro.deletarConta}
+        
+o cadastro deve ser excluído com sucesso
     Wait Until Element Is Visible    ${cadastro.msgContaDeletada}    5s
-    
- o cadastro deve ser excluído com sucesso   
     Element Should Be Visible        ${cadastro.msgContaDeletada}
 
 clico no botão "continue" para finalizar o processo
@@ -76,17 +82,17 @@ clico no botão "continue" para finalizar o processo
     Sleep                           2s
 
 #Login
-que eu clico no menu "Signup / Login"
+clico no menu "Signup / Login" para acessar a conta
   Click Element    ${login.logar}
 
 insiro os dados válidos  
-  Input Text    ${login.email}   Theolimat1@hotmail.com
+  Input Text    ${login.email}   celsosouzay9@hotmail.com
   Input Password    ${login.senha}    p12346
 
 clico no botão "Login"  
   Click Button    ${login.botaoLogin}
 
-usuario deve ser direcionado para página inicial
+a conta deve ser acessada com sucesso
   Wait Until Element Is Visible    ${cadastro.usuario_validaçãoLogin}    5s
     ${status}    Run Keyword And Return Status    Element Should Be Visible     ${cadastro.usuario_validaçãoLogin}
     IF    ${status}
@@ -97,6 +103,21 @@ usuario deve ser direcionado para página inicial
         Capture Page Screenshot
     END
   Sleep    2s
+
+#Login_Exclusão conta
+acesso a conta do usuário cadastrado
+   Click Element    ${login.logar}
+   Input Text    ${login.email}   celsosouzay9@hotmail.com
+   Input Text   ${login.senha}    p12346
+   Click Button    ${login.botaoLogin}
+
+clico no botão "delete account" para excluir a conta
+    Wait Until Element Is Visible    ${login.deletarConta}    3s
+    SeleniumLibrary.Click Element                   ${login.deletarConta}
+    Wait Until Element Is Visible    ${login.msgContaDeletada}    3s
+
+a conta deve ser deletada com sucesso
+   Element Should Be Visible        ${login.msgContaDeletada}
 
 # Ouvidoria
 acesso a página de SAC
@@ -129,6 +150,8 @@ o formulario de SAC deve ser enviado com sucesso
         Capture Page Screenshot
     END
     Sleep    5s
+
+
 
 
 
